@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /graphics/metapost/contrib/macros/makecirc
+# catalog-date 2006-11-19 21:19:11 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-makecirc
 Version:	20061119
 Release:	1
@@ -46,6 +52,7 @@ and MetaPost to work.
 %doc %{_texmfdistdir}/doc/metapost/makecirc/MakeCirc.pdf
 %doc %{_texmfdistdir}/doc/metapost/makecirc/README
 %doc %{_texmfdistdir}/doc/metapost/makecirc/ejemplos.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -56,3 +63,5 @@ and MetaPost to work.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
