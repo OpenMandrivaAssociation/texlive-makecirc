@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 MakeCirc is a MetaPost library that contains diverse symbols
@@ -28,20 +26,12 @@ with LaTeX documents and with other MetaPost drawing/graphic.
 Its output is a PostScript file. MakeCirc only requires (La)TeX
 and MetaPost to work.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -53,7 +43,6 @@ and MetaPost to work.
 %doc %{_texmfdistdir}/doc/metapost/makecirc/MakeCirc.pdf
 %doc %{_texmfdistdir}/doc/metapost/makecirc/README
 %doc %{_texmfdistdir}/doc/metapost/makecirc/ejemplos.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -64,5 +53,3 @@ and MetaPost to work.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
