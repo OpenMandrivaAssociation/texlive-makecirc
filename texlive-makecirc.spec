@@ -53,3 +53,17 @@ and MetaPost to work.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061119-2
++ Revision: 753683
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061119-1
++ Revision: 718945
+- texlive-makecirc
+- texlive-makecirc
+- texlive-makecirc
+- texlive-makecirc
+
