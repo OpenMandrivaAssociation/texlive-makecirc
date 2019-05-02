@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-makecirc
-Version:	20180303
-Release:	2
+Version:	20190228
+Release:	1
 Summary:	A MetaPost library for drawing electrical circuit diagrams
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/makecirc
