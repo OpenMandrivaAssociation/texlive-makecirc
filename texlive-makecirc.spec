@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /graphics/metapost/contrib/macros/makecirc
-# catalog-date 2006-11-19 21:19:11 +0100
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-makecirc
-Version:	20190228
+Version:	15878
 Release:	1
 Summary:	A MetaPost library for drawing electrical circuit diagrams
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/makecirc
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ Its output is a PostScript file. MakeCirc only requires (La)TeX
 and MetaPost to work.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,24 +40,10 @@ and MetaPost to work.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061119-2
-+ Revision: 753683
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061119-1
-+ Revision: 718945
-- texlive-makecirc
-- texlive-makecirc
-- texlive-makecirc
-- texlive-makecirc
-
