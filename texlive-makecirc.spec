@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	A MetaPost library for drawing electrical circuit diagrams
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/makecirc
+URL:		https://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/makecirc
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/makecirc.doc.r%{version}.tar.xz
